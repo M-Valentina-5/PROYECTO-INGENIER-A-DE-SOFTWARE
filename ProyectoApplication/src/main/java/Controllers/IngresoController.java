@@ -9,6 +9,7 @@ import com.proyecto.demo.Ingreso;
 import com.proyecto.demo.TipoCategoria;
 import java.util.ArrayList;
 import java.util.List;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
  inicio de la clase IngresoController
  */
 
-@RestController
+@Controller
 @RequestMapping("/ingresos")
 public class IngresoController {
 
