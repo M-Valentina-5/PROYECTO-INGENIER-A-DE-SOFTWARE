@@ -4,11 +4,30 @@
  */
 package com.proyecto.demo;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Categoria {
     
     //Atributos
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    
     private String nombreCategoria;
+    
+    @Enumerated(EnumType.STRING)
     private TipoCategoria tipo;
+
+    
+    //Constructor vacio requerido por Jpa
+    public Categoria() {
+    }
     
     //Constructor
     public Categoria(String nombreCategoria, TipoCategoria tipo) {
@@ -18,6 +37,11 @@ public class Categoria {
     
     //Getters
 
+    public Long getId() {
+        return id;
+    }
+    
+    
     public String getNombreCategoria() {
         return nombreCategoria;
     }
@@ -26,6 +50,14 @@ public class Categoria {
         return tipo;
     }
     
+    //Setters
+    public void setNombreCategoria(String nombreCategoria) {
+        this.nombreCategoria = nombreCategoria;
+    }
+
+    public void setTipo(TipoCategoria tipo) {
+        this.tipo = tipo;
+    }
     
     
     

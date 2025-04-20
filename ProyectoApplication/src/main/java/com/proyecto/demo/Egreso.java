@@ -4,13 +4,34 @@
  */
 package com.proyecto.demo;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+
+@Entity
 public class Egreso {
 
     //Atributos
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long idE;
+    
     private double montoE;
+    
+    @ManyToOne
+    @JoinColumn(name = "Categoria_id")
     private Categoria categoriaEgreso;
+    
     private String  descripcionE;
     
+    
+    //Constructor vacio requerido por Jpa
+    public Egreso() {
+    }
+
     //Constructor
     public Egreso(double montoE, Categoria categoriaEgreso, String descripcionE) {
         this.montoE = montoE;
@@ -19,6 +40,10 @@ public class Egreso {
     }
     
     //Getters
+    
+    public Long getIdE() {
+        return idE;
+    }
 
     public double getMontoE() {
         return montoE;
@@ -30,6 +55,20 @@ public class Egreso {
 
     public String getDescripcionE() {
         return descripcionE;
+    }
+    
+    //Setters
+
+    public void setMontoE(double montoE) {
+        this.montoE = montoE;
+    }
+
+    public void setCategoriaEgreso(Categoria categoriaEgreso) {
+        this.categoriaEgreso = categoriaEgreso;
+    }
+
+    public void setDescripcionE(String descripcionE) {
+        this.descripcionE = descripcionE;
     }
     
 }
