@@ -6,11 +6,13 @@ package com.proyecto.demo.Repository;
 
 import com.proyecto.demo.Egreso;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author DELL
  */
+@Repository
 public interface EgresoRepository extends JpaRepository<Egreso, Long>{
     
 }

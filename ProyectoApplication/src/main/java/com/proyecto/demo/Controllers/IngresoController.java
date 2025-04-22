@@ -64,13 +64,13 @@ public class IngresoController {
             .orElse(ResponseEntity.notFound().build());
     }
     
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/ingresos{id}")
     public void eliminarIngreso(@PathVariable Long id){
         ingresoService.eliminarI(id);
     }
     
     //PUT
-    @PutMapping("/{id}")
+    @PutMapping("/ingresos{id}")
     public ResponseEntity<Ingreso> actualizarIngreso(@PathVariable Long id, @RequestBody Ingreso ingreso){
         try{
             Ingreso actualizadoi = ingresoService.actualizarI(id, ingreso);

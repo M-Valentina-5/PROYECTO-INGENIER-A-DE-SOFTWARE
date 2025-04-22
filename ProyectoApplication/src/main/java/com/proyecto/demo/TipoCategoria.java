@@ -9,5 +9,6 @@ package com.proyecto.demo;
  * @author DELL
  */
 public enum TipoCategoria {
-    INGRESO, EGRESO;
+    INGRESO, 
+    EGRESO;
 }

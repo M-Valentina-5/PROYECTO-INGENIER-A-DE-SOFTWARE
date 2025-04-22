@@ -10,8 +10,10 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "Egreso")
 public class Egreso {
 
     //Atributos
@@ -22,7 +24,7 @@ public class Egreso {
     private double montoE;
     
     @ManyToOne
-    @JoinColumn(name = "Categoria_id")
+    @JoinColumn(name = "categoria_id")
     private Categoria categoriaEgreso;
     
     private String  descripcionE;

@@ -6,11 +6,13 @@ package com.proyecto.demo.Repository;
 
 import com.proyecto.demo.Categoria;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author DELL
  */
-public interface CategoriaRepository extends JpaRepository< Categoria, Long> {
+@Repository
+public interface CategoriaRepository extends JpaRepository <Categoria, Long> {
     
 }
