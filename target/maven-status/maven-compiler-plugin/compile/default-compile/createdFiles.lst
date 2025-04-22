@@ -1,0 +1,6 @@
+com\mycompany\loginapp\Loginapp.class
+com\example\loginapp\repository\UsuarioRepository.class
+com\example\loginapp\controller\UsuarioController.class
+com\example\loginapp\LoginappApplication.class
+com\example\loginapp\model\Usuario.class
+com\example\loginapp\service\UsuarioService.class
