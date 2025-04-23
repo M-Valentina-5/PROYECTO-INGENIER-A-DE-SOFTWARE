@@ -37,7 +37,7 @@ public class IngresoController {
         this.ingresoService = ingresoService;
     }
     
-    @GetMapping
+    @GetMapping ("/ingreso")
     public List<Ingreso> obtenerIngresos(){
         return ingresoService.obtenerTodosI();
     }
@@ -52,7 +52,7 @@ public class IngresoController {
         return ingresos;
     }**/
     
-    @PostMapping
+    @PostMapping ("/postt")
     public Ingreso crearIngreso(@RequestBody Ingreso ingreso){
         return ingresoService.guardarI(ingreso);
     }
@@ -69,16 +69,16 @@ public class IngresoController {
         ingresoService.eliminarI(id);
     }
     
-    //PUT
-    @PutMapping("/ingresos{id}")
-    public ResponseEntity<Ingreso> actualizarIngreso(@PathVariable Long id, @RequestBody Ingreso ingreso){
-        try{
+    @PutMapping("/ingresosPUT/{id}")
+    public ResponseEntity<Ingreso> actualizarIngreso(@PathVariable Long id, @RequestBody Ingreso ingreso) {
+        try {
             Ingreso actualizadoi = ingresoService.actualizarI(id, ingreso);
             return ResponseEntity.ok(actualizadoi);
-        } catch (RuntimeException e){
+        } catch (RuntimeException e) {
             return ResponseEntity.notFound().build();
         }
     }
-    
-    
 }
+
+    
+    

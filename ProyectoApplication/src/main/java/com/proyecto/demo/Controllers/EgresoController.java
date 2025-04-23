@@ -36,11 +36,8 @@ public class EgresoController {
     }
     
     
-    @GetMapping
-    public List<Egreso> obtenerEgresos() {
-        return egresoService.obtenerTodosE();
-    }
-    /**public List<Egreso> obtenerEgresos(){
+    @GetMapping ("/egreso")
+public List<Egreso> obtenerEgresos(){
         Categoria Alimentacion = new Categoria("Alimentación ", TipoCategoria.EGRESO);
         Categoria Transporte = new Categoria("Transporte", TipoCategoria.EGRESO);
         
@@ -49,9 +46,9 @@ public class EgresoController {
         egresos.add(new Egreso(18000, Transporte, "lo que gaste en Transmilenio en una semana"));
         
         return egresos;
-    }**/
+    }
     
-    @PostMapping
+    @PostMapping("/postegreso")
     public Egreso crearEgreso(@RequestBody Egreso egreso){
         return egresoService.guardarE(egreso);
     }
@@ -68,7 +65,8 @@ public class EgresoController {
         egresoService.eliminarE(id);
     }
     
-    //PUT
+    //PUT 
+    
     public ResponseEntity<Egreso> actualizarEgreso(@PathVariable Long id, @RequestBody Egreso egreso){
         try { 
            Egreso actualizadoE = egresoService.actualizarE(id, egreso);
